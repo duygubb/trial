@@ -150,6 +150,7 @@ body {
 .about-card-text p {
   margin-top: 10px;
 }
+
 .footer{
   display: inline-block;
 }
@@ -183,7 +184,38 @@ footer .bottom-footer {
   font-size: 14px;
 
 }
+.founder-card {
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+  padding: 0 100px;
+}
 
+.founder-card-text {
+  flex: 1;
+  line-height: 1.5;
+}
+
+.founder-card img {
+  width: 40%;
+  max-width: 300px;
+  margin-right: 20px;
+}
+
+.founder-card h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.founder-card-text em {
+  color: #994abd !important;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.founder-card-text p {
+  margin-top: 10px;
+}
 /* Donate Part */
 .donate-text {
   margin-top: 80px;
