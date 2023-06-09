@@ -124,13 +124,24 @@ body {
 }
 
 .founder-card-text {
-  width: 60%;
+  width: 50%;
+  margin-right: 80px !important;
 }
 
 .founder-card img {
   float: right;
   height: 400px;
 }
+
+.founder-card img {
+  float: right;
+  height: 400px;
+}
+
+.founder-card img {
+  margin-bottom: 50px;
+}
+
 .about-card {
   display: flex;
   align-items: center;
