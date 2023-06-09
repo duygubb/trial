@@ -25,7 +25,7 @@ $(document).ready(function() {
   
         for (var i = 0; i < founders.length; i++) {
           var founder = founders[i];
-          var html = '<h2>' + founder.name + '</h2>' +
+          var html = '<h3>' + founder.name + '</h3>' +
                      '<p><strong>Job:</strong> ' + founder.job + '</p>' +
                      '<p><strong>Bio:</strong> ' + founder.bio + '</p>';
   
