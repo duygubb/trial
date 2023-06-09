@@ -125,18 +125,19 @@ body {
 
 .founder-card-text {
   width: 50%;
-  margin-right: 200px !important;
+  margin-right: 80px !important;
 }
 
 .founder-card img {
   float: right;
   height: 400px;
+  margin-left: 100px;
 }
 
 .founder-card h2 {
-margin-bottom: 100px;
+  margin-bottom: 30px;
+  margin-top: 0;
 }
-
 .about-card {
   display: flex;
   align-items: center;
