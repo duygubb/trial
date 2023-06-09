@@ -25,7 +25,7 @@ $(document).ready(function() {
   
         for (var i = 0; i < founders.length; i++) {
           var founder = founders[i];
-          var html = '<h2>' + founder.name + '</h2>' +
+          var html = '<h3>' + founder.name + '</h3>' +
                      '<p><strong>Job:</strong> ' + founder.job + '</p>' +
                      '<p><strong>Bio:</strong> ' + founder.bio + '</p>';
   
@@ -34,6 +34,25 @@ $(document).ready(function() {
       }
     });
   });
+
+    var imageUrl = "https://images.dog.ceo/breeds/terrier-dandie/n02096437_287.jpg";
+   $.ajax({
+        url: "http://api.example.com/image-endpoint",
+        method: "GET",
+        data: { url: imageUrl },
+        success: function(response) {
+          var imageUrl = response.message; 
+          var status = response.status; 
+    
+          if (status === "success") {
+            $("#shelter-animal-img").attr("src", imageUrl); 
+          }
+        },
+        error: function() {
+          console.log("Error.");
+        }
+      });
+
 
   var selectTopics = $("#topics");
   var problemDate = $("#date");
