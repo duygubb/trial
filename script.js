@@ -29,7 +29,7 @@ $(document).ready(function() {
                      '<p><strong>Job:</strong> ' + founder.job + '</p>' +
                      '<p><strong>Bio:</strong> ' + founder.bio + '</p>';
   
-          $('#founders').append(html);
+          $('#founder').append(html);
         }
       }
     });
