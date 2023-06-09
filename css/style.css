@@ -235,7 +235,7 @@ footer .bottom-footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 350px;
+  width: 350px !important;
   /* margin: 5px; */
   padding: 20px;
   border: 1px solid #ccc;
@@ -243,7 +243,7 @@ footer .bottom-footer {
 }
 .donate-card:nth-child(2) {
   background-color: rgb(238, 238, 238);
-  width: 400px;
+  width: 400px !important;
 }
 .donate-card img {
   width: 100%;
