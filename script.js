@@ -33,12 +33,16 @@ $(document).ready(function() {
         }
       }
     });
-  });
 
-  $.getJSON('https://dog.ceo/api/breeds/image/random', function(data) {
-    var resimURL = data.message;
-    $('#resim').attr('src', resimURL);
-});
+      $.ajax({
+          url: "https://dog.ceo/api/breeds/image/random",
+          dataType: "json",
+          success: function(data) {
+              var imageURL = data.message;
+              $('#resim').attr('src', imageURL);
+          }
+      });
+  });
 
 
   var selectTopics = $("#topics");
