@@ -115,7 +115,22 @@ body {
   text-align: center;
   z-index: 1;
 }
+.founder-card {
+  display: flex;
+  align-items: center;
+  margin-top: 80px !important;
+  padding: 0 100px;
+  margin: 0 80px;
+}
 
+.founder-card-text {
+  width: 60%;
+}
+
+.founder-card img {
+  float: right;
+  height: 400px;
+}
 .about-card {
   display: flex;
   align-items: center;
@@ -150,6 +165,7 @@ body {
 .about-card-text p {
   margin-top: 10px;
 }
+
 .footer{
   display: inline-block;
 }
