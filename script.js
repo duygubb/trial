@@ -40,11 +40,6 @@ fetch('https://dog.ceo/api/breeds/image/random')
         const shelterAnimalImg = document.getElementById('shelter-animal-img');
         shelterAnimalImg.src = imageUrl;
 
-        // Resmi indir ve kaydet
-        const link = document.createElement('a');
-        link.href = imageUrl;
-        link.download = 'images/donateImage2.jpg';
-        link.click();
     });
 
   var selectTopics = $("#topics");
