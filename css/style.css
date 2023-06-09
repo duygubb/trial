@@ -125,7 +125,7 @@ body {
 
 .founder-card-text {
   width: 50%;
-  margin-right: 80px !important;
+  margin-right: 200px !important;
 }
 
 .founder-card img {
@@ -133,13 +133,8 @@ body {
   height: 400px;
 }
 
-.founder-card img {
-  float: right;
-  height: 400px;
-}
-
-.founder-card img {
-  margin-bottom: 50px;
+.founder-card h2 {
+margin-bottom: 100px;
 }
 
 .about-card {
