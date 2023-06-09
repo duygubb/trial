@@ -41,23 +41,24 @@ $(document).ready(function() {
 
     var imageUrl = "https://images.dog.ceo/breeds/terrier-dandie/n02096437_287.jpg";
   
-    $.ajax({
-      url: "http://api.example.com/image-endpoint",
-      method: "GET",
-      data: { url: imageUrl },
-      success: function(response) {
-        var imageUrl = response.message;
-        var status = response.status;
-  
-        if (status === "success") {
-          var img = $("<img>").attr("src", imageUrl);
-          $("#dogs").append(img); 
+
+    
+      $.ajax({
+        url: "http://api.example.com/image-endpoint",
+        method: "GET",
+        data: { url: imageUrl },
+        success: function(response) {
+          var imageUrl = response.message; 
+          var status = response.status; 
+    
+          if (status === "success") {
+            $("#shelter-animal-img").attr("src", imageUrl); 
+          }
+        },
+        error: function() {
+          console.log("Error.");
         }
-      },
-      error: function() {
-        console.log("Resim çekilirken bir hata oluştu.");
-      }
-    });
+      });
 
 
   var selectTopics = $("#topics");
