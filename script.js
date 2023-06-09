@@ -15,37 +15,24 @@ $(document).ready(function() {
     "E-mail",
     "Phone"
   ];
-  var name = 'golden retriever';
-  $.ajax({
-      method: 'GET',
-      url: 'https://api.api-ninjas.com/v1/dogs?name=' + name,
-      headers: { 'X-Api-Key': 'YOUR_API_KEY' },
-      contentType: 'application/json',
-      success: function(result) {
-          // Resim URL'sini al ve görüntüyü güncelle
-          var dogImage = document.getElementById('dog-image');
-          dogImage.src = result[0].url;
-      },
-      error: function(jqXHR) {
-          console.error('Error: ', jqXHR.responseText);
+
+  $(document).ready(function() {
+    $.ajax({
+      url: "founder.json",
+      dataType: "json",
+      success: function(data) {
+        var founders = data;
+  
+        for (var i = 0; i < founders.length; i++) {
+          var founder = founders[i];
+          var html = '<h2>' + founder.name + '</h2>' +
+                     '<p><strong>Job:</strong> ' + founder.job + '</p>' +
+                     '<p><strong>Bio:</strong> ' + founder.bio + '</p>';
+  
+          $('#founder').append(html);
+        }
       }
-  });
-
-  $.ajax({
-    url: "founder.json",
-    dataType: "json",
-    success: function(data) {
-      var founders = data;
-
-      for (var i = 0; i < founders.length; i++) {
-        var founder = founders[i];
-        var html = '<h3>' + founder.name + '</h3>' +
-                   '<p><strong>Job:</strong> ' + founder.job + '</p>' +
-                   '<p><strong>Bio:</strong> ' + founder.bio + '</p>';
-
-        $('#founder').append(html);
-      }
-    }
+    });
   });
 
   var selectTopics = $("#topics");
@@ -75,9 +62,11 @@ $(document).ready(function() {
   $("#contact-method input").checkboxradio({
     required: true
   });
-});
 
+});
+  
 function giveAlert() {
+
   var requiredFields = [$('#date'), $('#name'), $('#email'), $('#phone'), $('#message')];
   var filled = true;
 
