@@ -15,6 +15,21 @@ $(document).ready(function() {
     "E-mail",
     "Phone"
   ];
+  var name = 'golden retriever';
+  $.ajax({
+      method: 'GET',
+      url: 'https://api.api-ninjas.com/v1/dogs?name=' + name,
+      headers: { 'X-Api-Key': 'YOUR_API_KEY' },
+      contentType: 'application/json',
+      success: function(result) {
+          // Resim URL'sini al ve görüntüyü güncelle
+          var dogImage = document.getElementById('dog-image');
+          dogImage.src = result[0].url;
+      },
+      error: function(jqXHR) {
+          console.error('Error: ', jqXHR.responseText);
+      }
+  });
 
   $.ajax({
     url: "founder.json",
@@ -32,17 +47,6 @@ $(document).ready(function() {
       }
     }
   });
-
-        fetch('https://images.dog.ceo/breeds/terrier-dandie/n02096437_287.jpg')
-            .then(response => response.json())
-            .then(data => {
-                // Resmi hedeflenen <h2> etiketinin üzerine yerleştir
-                var dogImage = document.getElementById('dog-image');
-                dogImage.style.backgroundImage = `url(${data.message})`;
-            })
-            .catch(error => {
-                console.error('Bir hata oluştu:', error);
-            });
 
   var selectTopics = $("#topics");
   var problemDate = $("#date");
