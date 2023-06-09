@@ -16,50 +16,40 @@ $(document).ready(function() {
     "Phone"
   ];
 
-  $(document).ready(function() {
-    $.ajax({
-      url: "founder.json",
-      dataType: "json",
-      success: function(data) {
-        var founders = data;
-  
-        for (var i = 0; i < founders.length; i++) {
-          var founder = founders[i];
-          var html = '<h3>' + founder.name + '</h3>' +
-                     '<p><strong>Job:</strong> ' + founder.job + '</p>' +
-                     '<p><strong>Bio:</strong> ' + founder.bio + '</p>';
-  
-          $('#founder').append(html);
-        }
+  $.ajax({
+    url: "founder.json",
+    dataType: "json",
+    success: function(data) {
+      var founders = data;
+
+      for (var i = 0; i < founders.length; i++) {
+        var founder = founders[i];
+        var html = '<h3>' + founder.name + '</h3>' +
+                   '<p><strong>Job:</strong> ' + founder.job + '</p>' +
+                   '<p><strong>Bio:</strong> ' + founder.bio + '</p>';
+
+        $('#founder').append(html);
       }
-    });
+    }
   });
-  var imageUrls = [
-    "https://example.com/images/donateImage2.jpg"
-  ];
 
+  var imageUrl = "https://images.dog.ceo/breeds/terrier-dandie/n02096437_287.jpg";  
+  $.ajax({
+    url: "http://api.example.com/image-endpoint",
+    method: "GET",
+    data: { url: imageUrl },
+    success: function(response) {
+      var imageUrl = response.message; 
+      var status = response.status; 
 
-    var imageUrl = "https://images.dog.ceo/breeds/terrier-dandie/n02096437_287.jpg";
-  
-
-    
-      $.ajax({
-        url: "http://api.example.com/image-endpoint",
-        method: "GET",
-        data: { url: imageUrl },
-        success: function(response) {
-          var imageUrl = response.message; 
-          var status = response.status; 
-    
-          if (status === "success") {
-            $("#shelter-animal-img").attr("src", imageUrl); 
-          }
-        },
-        error: function() {
-          console.log("Error.");
-        }
-      });
-
+      if (status === "success") {
+        $("#shelter-animal-img").attr("src", imageUrl); 
+      }
+    },
+    error: function() {
+      console.log("Error.");
+    }
+  });
 
   var selectTopics = $("#topics");
   var problemDate = $("#date");
@@ -88,11 +78,9 @@ $(document).ready(function() {
   $("#contact-method input").checkboxradio({
     required: true
   });
-
 });
-  
-function giveAlert() {
 
+function giveAlert() {
   var requiredFields = [$('#date'), $('#name'), $('#email'), $('#phone'), $('#message')];
   var filled = true;
 
