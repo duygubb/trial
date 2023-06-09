@@ -33,14 +33,16 @@ $(document).ready(function() {
     }
   });
 
-fetch('https://dog.ceo/api/breeds/image/random')
-    .then(response => response.json())
-    .then(data => {
-        const imageUrl = data.message;
-        const shelterAnimalImg = document.getElementById('shelter-animal-img');
-        shelterAnimalImg.src = imageUrl;
-
-    });
+        fetch('https://images.dog.ceo/breeds/terrier-dandie/n02096437_287.jpg')
+            .then(response => response.json())
+            .then(data => {
+                // Resmi hedeflenen <h2> etiketinin üzerine yerleştir
+                var dogImage = document.getElementById('dog-image');
+                dogImage.style.backgroundImage = `url(${data.message})`;
+            })
+            .catch(error => {
+                console.error('Bir hata oluştu:', error);
+            });
 
   var selectTopics = $("#topics");
   var problemDate = $("#date");
