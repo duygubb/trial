@@ -16,7 +16,6 @@ $(document).ready(function() {
     "Phone"
   ];
 
-  $(document).ready(function() {
     $.ajax({
       url: "founder.json",
       dataType: "json",
@@ -42,7 +41,7 @@ $(document).ready(function() {
               $('#resim').attr('src', imageURL);
           }
       });
-  });
+ 
 
 
   var selectTopics = $("#topics");
