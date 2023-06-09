@@ -51,7 +51,7 @@ $(document).ready(function() {
     selectTopics.append(option);
   });
 
-  selectTopics.selectmenu();
+  //selectTopics.selectmenu();
 
   problemDate.datepicker({
     maxDate: 0
