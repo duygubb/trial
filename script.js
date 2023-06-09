@@ -35,23 +35,10 @@ $(document).ready(function() {
     });
   });
 
-    var imageUrl = "https://images.dog.ceo/breeds/terrier-dandie/n02096437_287.jpg";
-   $.ajax({
-        url: "http://api.example.com/image-endpoint",
-        method: "GET",
-        data: { url: imageUrl },
-        success: function(response) {
-          var imageUrl = response.message; 
-          var status = response.status; 
-    
-          if (status === "success") {
-            $("#shelter-animal-img").attr("src", imageUrl); 
-          }
-        },
-        error: function() {
-          console.log("Error.");
-        }
-      });
+  $.getJSON('https://dog.ceo/api/breeds/image/random', function(data) {
+    var resimURL = data.message;
+    $('#resim').attr('src', resimURL);
+});
 
 
   var selectTopics = $("#topics");
