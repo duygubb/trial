@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="toastr.min.js"></script>
+    <link rel="stylesheet" href="toastr.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="toolbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+                <h2> FAVOR </h2>
+                <p> Better Together </p>
+            </div>
+            <nav>
+                <ul class="navigation">
+                    <li class="n-item"><a class="nav-action" href="index.html">Home</a></li>
+                    <li class="n-item"><a class="nav-action" href="donate.html">Donate</a></li>
+                    <li class="n-item"><a class="nav-action" href="our-mission.html">Our Mission</a></li>
+                    <li class="n-item"><a class="nav-action" href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="contact">
+            <div id="contact-us">
+                <h1>Contact Us</h1>
+                <form>
+                    <table id="uiTable">
+                        <tr>
+                            <td>Topic</td>
+                            <td>
+                                <select id="topics" required>
+                                    <option value="">Select a topic</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Problem Date*</td>
+                            <td><input type="text" id="date" required><br></td>
+                        </tr>
+                        <tr>
+                            <td>Name*</td>
+                            <td><input id="name" type="text" name="name" required=""><br></td>
+                        </tr>
+                        <tr>
+                            <td>Surname</td>
+                            <td><input id="surname" type="text" name="surname"><br></td>
+                        </tr>
+                        <tr>
+                            <td>E-mail Address*</td>
+                            <td><input type="email" id="email" required placeholder="Enter a valid email address"></td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number*</td>
+                            <td><input type="tel" id="phone" required pattern="[0-9]{10}" placeholder="Enter a 10-digit phone number"></td>
+                        </tr>
+                        <tr>
+                            <td>Detail Message*</td>
+                            <td><input id="message" type="text" name="message" required="" placeholder="Please describe the problem in detail" oninput="updateText()"><br></td>
+                        </tr>
+                        <tr>
+                            <td>Preferred Method of Contact*</td>
+                            <td id="contact-method">
+                                <input type="radio" id="emailRadio" name="contact-method" value="email" required>
+                                <label for="emailRadio">Email</label>
+                                <input type="radio" id="phoneRadio" name="contact-method" value="phone" required>
+                                <label for="phoneRadio">Phone</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="submit" id="submit-btn" onclick="giveAlert()"></td>
+                            
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div id="map">
+                <img src="images/map.png" alt="map">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="top-footer">
+            <img src="images/locationIcon.png" alt="location">
+            <p>Lorem ipsum dolor sit amet</p>
+            <img src="images/phoneIcon.jpg" alt="phone">
+            <p>(+90)1234839012</p>
+            <img src="images/mailIcon.jpg" alt="location">
+            <p>mail@domain.com</p>
+        </div>
+        <div class="bottom-footer">
+            <p>© 2023 Duygu Baday. All rights reserved. </p>
+        </div>
+    </footer>
+</body>
+
+</html>
