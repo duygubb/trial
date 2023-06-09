@@ -50,8 +50,9 @@ $(document).ready(function() {
       .val(topic);
     selectTopics.append(option);
   });
-
-  //selectTopics.selectmenu();
+  
+  submit.button();
+  selectTopics.selectmenu();
 
   problemDate.datepicker({
     maxDate: 0
