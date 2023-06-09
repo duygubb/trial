@@ -33,23 +33,19 @@ $(document).ready(function() {
     }
   });
 
-  var imageUrl = "https://images.dog.ceo/breeds/terrier-dandie/n02096437_287.jpg";  
-  $.ajax({
-    url: "http://api.example.com/image-endpoint",
-    method: "GET",
-    data: { url: imageUrl },
-    success: function(response) {
-      var imageUrl = response.message; 
-      var status = response.status; 
+fetch('https://dog.ceo/api/breeds/image/random')
+    .then(response => response.json())
+    .then(data => {
+        const imageUrl = data.message;
+        const shelterAnimalImg = document.getElementById('shelter-animal-img');
+        shelterAnimalImg.src = imageUrl;
 
-      if (status === "success") {
-        $("#shelter-animal-img").attr("src", imageUrl); 
-      }
-    },
-    error: function() {
-      console.log("Error.");
-    }
-  });
+        // Resmi indir ve kaydet
+        const link = document.createElement('a');
+        link.href = imageUrl;
+        link.download = 'images/donateImage2.jpg';
+        link.click();
+    });
 
   var selectTopics = $("#topics");
   var problemDate = $("#date");
